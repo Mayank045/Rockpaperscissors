@@ -5,32 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="title-screen" class="title-screen">
+        <div class="title-content">
+            <h1 class="title-main">ROCK PAPER SCISSORS</h1>
+            <div class="title-sub">Click anywhere to play</div>
+        </div>
+    </div>
 
     <h1>Rock Paper Scissors</h1>
 
-    <div class="scores">
-        <div class="score">
-            <h2>Player</h2>
-            <p id="player-score">0</p>
+    <div class="game-container">
+        <div id="fight-overlay" class="fight-overlay" style="display:none;">FIGHT!</div>
+        <div class="scores">
+            <div class="score">
+                <h2>Player</h2>
+                <p id="player-score">0</p>
+            </div>
+            <div class="score">
+                <h2>Computer</h2>
+                <p id="computer-score">0</p>
+            </div>
         </div>
-        <div class="score">
-            <h2>Computer</h2>
-            <p id="computer-score">0</p>
+        <button id="reset-scores-btn" class="restart-btn" style="margin-bottom: 18px;">Reset Scores</button>
+
+        <!-- Sound Effects -->
+        <audio id="sound-win" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b6fae7b2.mp3"></audio>
+        <audio id="sound-lose" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b6fae7b2.mp3"></audio>
+        <audio id="sound-draw" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b6fae7b2.mp3"></audio>
+
+        <div class="choices">
+            <button class="choice" id="rock" aria-label="Rock">✊<span class="choice-label">Rock</span></button>
+            <button class="choice" id="paper" aria-label="Paper">✋<span class="choice-label">Paper</span></button>
+            <button class="choice" id="scissors" aria-label="Scissors">✌️<span class="choice-label">Scissors</span></button>
         </div>
-    </div>
 
-    <div class="choices">
-        <button class="choice" id="rock">Rock</button>
-        <button class="choice" id="paper">Paper</button>
-        <button class="choice" id="scissors">Scissors</button>
-    </div>
+        <div class="hand-animations" id="hand-animations"></div>
 
-    <div class="results">
-        <p>You chose: <span id="player-choice"></span></p>
-        <p>Computer chose: <span id="computer-choice"></span></p>
-        <h2 id="result"></h2>
+        <div class="results">
+            <p>You chose: <span id="player-choice"></span></p>
+            <p>Computer chose: <span id="computer-choice"></span></p>
+            <h2 id="result"></h2>
+        </div>
+
+        <button id="restart-btn" class="restart-btn" style="display:none;">Play Again</button>
     </div>
 
     <script src="script.js"></script>
